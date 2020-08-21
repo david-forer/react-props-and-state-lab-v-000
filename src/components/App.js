@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   fetchPets = () => {
-    let endpoint = '/api/pets'
+    let endpoint = '/api/pets';
 
     if(this.state.filters.type !== 'all'){
       endpoint += `?type=${this.state.filters.type}`
@@ -36,7 +36,7 @@ class App extends React.Component {
   adoptPet = petId => {
     const pets = this.state.pets.map( pet => {
       return pet.id === petId ? {...pet, isAdopted: true} : pet;
-    })
+    });
     this.setState({pets: pets})
   }
 
